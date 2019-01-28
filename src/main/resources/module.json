@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "MQTTIXI.ixi",
+  "main_class": "MQTTIXI",
+  "description": "Convert ict tx's to MQTT messages",
+  "repository": "Qaamien/MQTTIXI",
+  "gui_port": 0,
+  "supported_versions": ["0.4", "0.4.1-SNAPSHOT"]
+}

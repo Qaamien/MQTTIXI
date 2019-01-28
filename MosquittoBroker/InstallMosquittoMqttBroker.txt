@@ -1,0 +1,60 @@
+                      https://mosquitto.org
+
+-Mosquitto is open source MQTT broker which you can run on Raspberry pi-
+
+// Do your own research around MQTT brokers if those are something you want to use
+
+// These are install instructions which i found from internet, 
+// i do not take any responsibility if these cause any damage
+// when you install or use broker installed with these instructions!
+
+// after Raspberry pi reboot broker will run allways, because installation makes it systemd service.
+
+// To install Mosquitto on your Raspberry Pi type on terminal: 
+
+sudo apt-get install mosquitto
+sudo apt-get install mosquitto-clients
+
+----------------------------------------------------------------------------
+
+sudo nano /etc/mosquitto/mosquitto.conf
+
+// after that last command it will open text file,
+// remove last line "include_dir /etc/mosquitto/conf.d"
+
+// and replace that with these three lines: 
+
+allow_anonymous false
+password_file /etc/mosquitto/pwfile
+listener 1883
+
+// first it requires that you have to use username and password
+// and set brokers port = 1883
+
+// press Ctrl + x to exit and choose YES when it ask do you want to save changes
+
+-----------------------------------------------------------------------------
+
+// type this line next, and replace "username" with username which you want to use on your broker and hit enter
+
+sudo mosquitto_passwd -c /etc/mosquitto/pwfile username
+
+// then it ask password you want to use
+
+// after that it is done, just type
+
+sudo reboot
+
+// It will restart your Raspberry pi
+
+// when Raspberry pi starts broker will automaticly start because installation makes it systemd service 
+
+// To use broker, open two terminals, use first one to subscribe to topic, replace username and password
+// Use second one to publish message to topic, it will appear in first terminal because both use same topic "dev/test". 
+
+mosquitto_sub -d -u username -P password -t "dev/test"
+mosquitto_pub -d -u username -P password -t "dev/test" -m "Hello world"
+
+// to change topic replace: -t "dev/test" with any topic name which you want to use.
+
+// Have fun!
