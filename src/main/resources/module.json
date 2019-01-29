@@ -2,7 +2,7 @@
   "version": "1",
   "name": "MQTTIXI.ixi",
   "main_class": "MQTTIXI",
-  "description": "Convert ict tx's to MQTT messages",
+  "description": "Can send MQTT msg to ICT network and back",
   "repository": "Qaamien/MQTTIXI",
   "gui_port": 0,
   "supported_versions": ["0.4", "0.4.1-SNAPSHOT"]
