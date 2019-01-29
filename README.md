@@ -37,7 +37,7 @@ So you can send message and listen address to make sure it has received your mes
 I will add some examples what you can do soon..
 
 
-MQTT makes possible to send data to ICT network from low end devices and programs 
+MQTT makes possible to send data to ICT network from mcus and programs 
 
 With MQTT you can send sensor data from NodeMcu, Arduino etc to IXI module which will
 then send that data to ICT network and anyone who listens that address can read that data
