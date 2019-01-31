@@ -102,6 +102,8 @@ public class MQTTIXI extends IxiModule {
                     t.asciiMessage(ReceivedMSG);
                     ixi.submit(t.buildWhileUpdatingTimestamp());
 
+                    LOGGER.info("MESSAGE SENDED to ICT NETWORK");
+
                 }
 
             }
@@ -128,7 +130,7 @@ public class MQTTIXI extends IxiModule {
             @Override
             public void onGossipEvent(GossipEvent gossipEvent) {
 
-                // Filter, which make program to only listen ict network address MQTTIXITEST9999999..
+                // Filter, which make program to only listen ict network address MQTTIXI999999999..
                 filter.watchAddress("MQTTIXI99999999999999999999999999999999999999999999999999999999999999999999999999");
 
                 // Ignores other address transactions, only let watched address transactions pass
